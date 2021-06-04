@@ -1,0 +1,425 @@
+/* SailPoint Identity Calculator styles */
+.d-block {
+  display: block;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.sp-btn {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.42857;
+  margin: 0.3125rem 1px;
+  padding: 12px 30px;
+  position: relative;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),-webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),-webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),-webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  will-change: box-shadow, transform;
+}
+
+.sp-btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.sp-btn.sp-btn--purple {
+  background: -webkit-gradient(linear, left top, left bottom, from(#753BBD), to(#451998));
+  background: linear-gradient(180deg, #753BBD 0%, #451998 100%);
+  color: #fff;
+}
+
+/* Calculator fields */
+.calculator-container, .calculator-container *, .calculator-container *::before, .calculator-container *::after {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.calculator-container {
+  -webkit-box-shadow: 0 0 4px 0 #888;
+  background-color: #fff;
+  border-bottom: 2px solid #bbb;
+  border-radius: 8px;
+  box-shadow: 0 0 4px 0 #888;
+  color: #005;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 1.8;
+  margin: 1em 0;
+  padding: 1em 0;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.calc-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.calc-row [class^="col-"] {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 576px) {
+  .calc-row .col-sm-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }  
+}
+
+@media (min-width: 768px) {
+  .calc-row .col-md-5 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 41.66667%;
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  
+  .calc-row .col-md-7 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 58.33333%;
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+}
+
+.calculator-container select.form-control:not([size]):not([multiple]) {
+  border: none;
+  font-size: 1.25rem;
+  height: 3rem;
+  width: 100%;
+}
+
+.calculator-container .form-control:-moz-read-only {
+  background-image: linear-gradient(to top, #753bbd 3px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #753bbd 3px, rgba(210, 210, 210, 0) 1px);
+}
+
+.calculator-container .form-control:read-only {
+  background-image: linear-gradient(to top, #753bbd 3px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #753bbd 3px, rgba(210, 210, 210, 0) 1px);
+}
+
+.slider-panel {
+  margin-top: 2.5rem;
+  clear: both;
+}
+
+.slider-panel:first-of-type {
+  margin-top: 0;
+}
+
+.input-panel > div {
+  width: 100%;
+}
+
+.input-panel .bmd-label-static {
+  color: #012168;
+  display: block;
+  font-size: 1.25em;
+}
+
+.bmd-form-group input::-webkit-input-placeholder {
+  line-height: 1.3;
+}
+.bmd-form-group input::-moz-placeholder {
+  line-height: 1.3;
+}
+.bmd-form-group input:-ms-input-placeholder {
+  line-height: 1.3;
+}
+.bmd-form-group input::-ms-input-placeholder {
+  line-height: 1.3;
+}
+.bmd-form-group .form-control,
+.bmd-form-group label,
+.bmd-form-group input::placeholder {
+  line-height: 1.3;
+}
+
+input#users,
+input#apps {
+  background-color: #e1e4ed;
+  border: 0;
+  color: #333333;
+  font-size: 1.25em;
+  margin: 0.5em 0 1em 0;
+  padding: 0.5em;
+  width: 100%;
+}
+
+#slider-users,
+#slider-apps {
+  background-color: #753bbd;
+  border: none;
+  height: 3px;
+}
+
+#slider-users span.ui-slider-handle,
+#slider-apps span.ui-slider-handle {
+  border-radius: 50%;
+  border: 1px solid #753bbd;
+  height: 1rem;
+  top: -.4rem;
+  width: 1rem;
+}
+
+#users-max-min,
+#apps-max-min {
+  color: #333333;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+#users-max-min .float-left,
+#apps-max-min .float-left {
+  float: left;
+}
+
+#users-max-min .float-right,
+#apps-max-min .float-right {
+  float: right;
+}
+
+.input-panel-right {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #005;
+  font-size: 1.2em;
+  font-weight: 600;
+  overflow: hidden;
+  position: relative;
+}
+
+.input-panel-right .h2 {
+  font-size: 48px;
+  line-height: 1.75;
+}
+
+.input-panel-right .h3 {
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.see-savings-container {
+  margin-top: 1.5rem;
+}
+
+.see-savings-container .sp-btn {
+  display: inline-block;
+}
+
+/* Chart */
+a.jump-to-chart {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
+
+#chartdiv {
+  height: 300px;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+#chartdiv g[opacity="0.3"][aria-labelledby] {
+  display: none;
+}
+
+.chart-labels {
+  -webkit-transform: translateX(-50%);
+  display: block;
+  height: 135px;
+  left: 50%;
+  top: 16rem;
+  transform: translateX(-50%);
+  width: 200px;
+  z-index: 15;
+}
+
+.chart-bg {
+  -webkit-transform: translateX(-50%);
+  background-color: #fff;
+  border-top-left-radius: calc(200px * 2);
+  border-top-right-radius: calc(200px * 2);
+  height: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 11.625rem;
+  width: calc(200px * 2);
+}
+
+#main-chart-label,
+#main-chart-label-save,
+#main-chart-label-value,
+#caption {
+  -webkit-transition: all ease 0.2s;
+  opacity: 0;
+  transition: all ease 0.2s;
+}
+
+#main-chart-label {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+#main-chart-label-save {
+  font-size: 1.375rem;
+  margin-top: auto;
+}
+
+#main-chart-label-value {
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+#main-chart-label-value::before {
+  content: "$";
+}
+
+#caption {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 1;
+  padding: 0 2rem;
+}
+
+
+/* Media Queries */
+@media (max-width: 992px) and (min-width: 768px) {
+  .container-fluid {
+    max-width: 768px;
+  }
+
+  .chart-bg {
+    border-top-left-radius: calc(150px * 2);
+    border-top-right-radius: calc(150px * 2);
+    height: 150px;
+    top: 16rem;
+    width: calc(150px * 2);
+  }
+
+  #chart-labels {
+    height: 130px;
+    top: 18.5rem;
+    width: 200px;
+  }
+
+  #main-chart-label {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  #main-chart-label-save {
+    font-size: 1.125rem;
+  }
+
+  #main-chart-label-value {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 767px) {
+  .input-panel-right {
+    margin-top: 3rem;
+  }
+
+  .input-panel-right .h2 {
+    font-size: 36px;
+  }
+
+  .input-panel-right .h3 {
+    font-size: 28px;
+  }
+
+  .chart-bg {
+    border-top-left-radius: calc(170px * 2);
+    border-top-right-radius: calc(170px * 2);
+    height: 170px;
+    top: 11.25rem;
+    width: calc(170px * 2);
+  }
+
+  #chartdiv {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  #chart-labels {
+    height: 115px;
+    top: 15rem;
+    width: 200px;
+  }
+
+  #main-chart-label-save {
+    font-size: 1.125rem;
+  }
+
+  #main-chart-label-value {
+    font-size: 1.375rem;
+    line-height: 1;
+  }
+
+  #caption {
+    top: -1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .input-panel-right .h2 {
+    font-size: 32px;
+  }
+
+  .input-panel-right .h3 {
+    font-size: 24px;
+  }
+
+  .chart-bg {
+    border-top-left-radius: calc(150px * 2);
+    border-top-right-radius: calc(150px * 2);
+    height: 150px;
+    top: 11rem;
+    width: calc(150px * 2);
+  }
+
+  #chartdiv {
+    height: 200px;
+  }
+
+  #chart-labels {
+    top: -1rem;
+    position: relative !important;
+  }
+
+  #caption {
+    top: 0;
+  }
+
+  #slider-users span.ui-slider-handle,
+  #slider-apps span.ui-slider-handle {
+    height: 1.5rem;
+    top: -.6rem;
+    width: 1.5rem;
+  }
+}
